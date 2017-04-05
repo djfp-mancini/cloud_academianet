@@ -78,7 +78,7 @@ const firebaseConfig = {
 
 5. Once this is complete, run `ionic serve`. This will transpile the Typescript and host the application on http://localhost:8100/
 
-6. Hosting this way automatically re-transpiles the source every time a change is saved.
+6. Hosting this way automatically re-transpiles the source every time a change is saved. The compiled application will be located under AcademiaNetSrc/www
 
 # Contact
 
