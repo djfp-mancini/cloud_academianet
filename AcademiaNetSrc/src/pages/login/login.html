@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-title style="text-align: center">Academia Net Login</ion-title>
+  <form (ngSubmit)="login()" #registerForm="ngForm">
+    <ion-item>
+      <ion-label floating>E-mail address</ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="registerCredentials.email"
+                 required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="registerCredentials.password"
+                 required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button large block round type="submit" [disabled]="!registerForm.form.valid">Login</button>
+      <ion-row>
+        <ion-col><button ion-button block round clear (click)="signInAsGuest()">Log in as Guest</button></ion-col>
+        <ion-col><button ion-button color="secondary" block round clear (click)="createAccount()"><span><ion-icon name="add-circle"></ion-icon></span>&nbsp;Create New Account</button></ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col><button ion-button style="background: #FFFFFF; font-family: Roboto,serif; color: #757575; text-transform: none" (click)="signInWithGoogle()"><img style="height: 20px" src="../../assets/icon/Google_-G-_Logo.svg.png">&nbsp;&nbsp;Sign in with Google</button></ion-col>
+        <ion-col><button ion-button style="background: #4267B2; font-family: 'Tahoma',serif; text-transform: none" (click)="signInWithFacebook()"><img style="height: 20px" src="../../assets/icon/F_icon_reversed.svg.png">&nbsp;&nbsp;Log in with Facebook</button></ion-col>
+        <ion-col><button ion-button style="background: #55ACEE; font-family: 'Helvetica Neue',serif; text-transform: none" (click)="signInWithTwitter()"><img style="height: 20px" src="../../assets/icon/Twitter_bird_logo_2012.svg">&nbsp;&nbsp;Sign in with Twitter</button></ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item [hidden]="!loginError" text-wrap>
+      <ion-label align="center" color="danger" text-wrap>{{errorMessage}}</ion-label>
+    </ion-item>
+  </form>
+</ion-content>

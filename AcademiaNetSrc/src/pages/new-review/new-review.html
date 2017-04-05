@@ -1,0 +1,52 @@
+<!--
+  Generated template for the NewReview page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title>Write a Review</ion-title>
+    <ion-buttons end>
+      <button ion-button solid color="default" (click)="dismiss(null)">Close</button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="dismiss(review)">
+    <ion-item>
+      <ion-label>Review Anonymously</ion-label>
+      <ion-checkbox name="anon" [(ngModel)]="isAnon" [disabled]="uid === GUEST_UID"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Reviewing as:</ion-label>
+      <ion-input name="name" readonly [(ngModel)]="userName"></ion-input>
+    </ion-item>
+    <ion-item [hidden]="type !== 'c'">
+      <ion-label color="primary" fixed>Year:</ion-label>
+      <ion-datetime name="year" displayFormat="YYYY" [(ngModel)]="review.year"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <rating name="stars" [(ngModel)]="review.rating"></rating>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating color="primary">Title of your Review:</ion-label>
+      <ion-input name="title" type="text" [(ngModel)]="review.title"></ion-input>
+    </ion-item>
+
+    <ion-item style="height: 20vh">
+      <ion-label fixed>Comments:</ion-label>
+      <ion-textarea name="comments" [(ngModel)]="review.body" rows="6" type="text"></ion-textarea>
+    </ion-item>
+
+    <br>
+
+    <button ion-button round default block type="submit">Submit</button>
+  </form>
+</ion-content>

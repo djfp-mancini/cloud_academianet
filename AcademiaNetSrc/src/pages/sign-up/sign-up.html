@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign Up for Academia Net</ion-title>
+    <ion-buttons end>
+      <button ion-button solid color="default" (click)="dismiss(null)">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-title style="text-align: center">Registration</ion-title>
+  <form (ngSubmit)="register()" #registerForm="ngForm">
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" name="name" [(ngModel)]="newCredentials.name"
+                 required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Nickname</ion-label>
+      <ion-input type="text" name="name" [(ngModel)]="newCredentials.screenName"
+                 required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>E-mail address</ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="newCredentials.email"
+                 required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="newCredentials.password"
+                 required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Confirm Password</ion-label>
+      <ion-input type="password" name="cpassword" [(ngModel)]="newCredentials.confirmPassword"
+                 required></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button large block round type="submit" [disabled]="!registerForm.form.valid">Register
+      </button>
+    </ion-item>
+    <ion-item [hidden]="!registerError" text-wrap>
+      <ion-label align="center" color="danger" text-wrap>{{errorMessage}}</ion-label>
+    </ion-item>
+    <ion-item [hidden]="!unMatchedPasswords" text-wrap>
+      <ion-label align="center" color="danger" text-wrap>Your passwords do not match. Please verify you have typed both passwords correctly</ion-label>
+    </ion-item>
+  </form>
+</ion-content>

@@ -1,0 +1,16 @@
+page-login #customBtn {
+  background: url(../../assets/google_signin_buttons/web/2x/btn_google_signin_light_normal_web@2x.png);
+  background-size: 191px 46px; }
+page-login #customBtn:hover {
+  cursor: pointer;
+  background: url(../../assets/google_signin_buttons/web/2x/btn_google_signin_light_normal_web@2x.png);
+  background-size: 191px 46px; }
+page-login #customBtn:active {
+  cursor: pointer;
+  background: url(../../assets/google_signin_buttons/web/2x/btn_google_signin_light_pressed_web@2x.png);
+  background-size: 191px 46px; }
+page-login span.label {
+  font-family: serif;
+  font-weight: normal; }
+
+/*# sourceMappingURL=login.css.map */

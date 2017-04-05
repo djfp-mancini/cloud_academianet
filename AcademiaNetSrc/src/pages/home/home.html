@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button solid color="default" (click)="logout()">Logout</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to Academia Net, {{name}}</h2>
+  <h5>To Get started, click the search tab and begin your search!</h5>
+  <div text-center>
+    <img style="width: 10%"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/UOIT_Logo_2014.svg/2000px-UOIT_Logo_2014.svg.png"
+         alt="UOIT Logo"><br>
+    <img style="width: 30%" src="../../assets/media/MACADAMIA.png" alt="logo">
+  </div>
+  <p text-center>Academia Net is a project created by senior undergraduate students for Dr. Qusay Mahmoud at the University of
+    Ontario Institute of Technology in Oshawa, Ontario. For more information, check out the "About" tab.</p>
+</ion-content>
+
+<ion-footer>
+  <p style="font-size: x-small; text-align: center">Academia Net v{{version}}</p>
+</ion-footer>

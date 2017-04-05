@@ -1,0 +1,32 @@
+<!--
+  Generated template for the SearchResults page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Search Results</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let result of searchResults">
+      <button ion-item menuClose (click)="openConferenceInfo()"><span style="font-style: italic; font-weight: bold">{{result.name}}</span>
+        &nbsp;<span>({{result.acronym}})</span></button>
+      <i [hidden]="result.rating" item-right>No Reviews Yet</i>
+      <i [hidden]="!result.rating" item-right><rating [(ngModel)]="result.rating" readOnly="true"></rating></i>
+    </ion-item>
+  </ion-list>
+  <p style="text-align: center" [hidden]="searchResults.length !== 0">No Results found for "{{res.title}}", would you
+    like to add it?</p>
+  <ion-item style="text-align: center">
+    <button ion-button round color="secondary" (click)="addConference()"><span><ion-icon
+      name="add-circle"></ion-icon></span>&nbsp;Add a Conference/Journal
+    </button>
+  </ion-item>
+</ion-content>
